@@ -37,6 +37,17 @@ def remove_non_strings(array)
 end
 
 def count_elements(array)
+  array.each do |hash|
+    hash[:count] = 0
+    array.each do |modified_hash|
+      if modified_hash[:name] == hash[:name]
+        hash[:count] += 1
+      end
+    end
+  end.uniq
+end
+
+def count_elements(array)
   newarr = []
   	array.each do |hash|
   		if newarr.empty?
